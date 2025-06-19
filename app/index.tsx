@@ -9,6 +9,7 @@ import {
 import React from "react";
 import ThemeView from "../components/ThemeView";
 import ThemeLogo from "../components/ThemeLogo";
+import { Link } from "expo-router";
 
 const Home = () => {
   return (
@@ -28,6 +29,16 @@ const Home = () => {
         </TouchableHighlight>
       </View>
       <ThemeLogo style={{ marginTop: 20 }} />
+
+      <View style={{ marginTop: 10, flexDirection: "row", gap: 10 }}>
+        <Link href="/login" style={styles.link}>
+          <Text>Login</Text>
+        </Link>
+
+        <Link href="/register" style={styles.link}>
+          <Text>Register</Text>
+        </Link>
+      </View>
     </ThemeView>
   );
 };
@@ -45,5 +56,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     backgroundColor: "red",
     color: "white",
+  },
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1,
+    cursor: "pointer",
   },
 });
