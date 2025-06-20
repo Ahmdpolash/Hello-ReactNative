@@ -8,12 +8,14 @@ const RootLaout = () => {
     <>
       <StatusBar style="auto" />
       <Stack>
+        {/* individual */}
+        <Stack.Screen name="index" options={{ title: "Home page" }} />
+
+
+
         {/* Groups */}
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-
-        {/* individual */}
-
-        <Stack.Screen name="index" options={{ title: "Home page" }} />
+        <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
       </Stack>
     </>
   );

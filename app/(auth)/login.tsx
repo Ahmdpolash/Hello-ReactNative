@@ -21,7 +21,7 @@ export default function Login() {
         <Text style={{ color: "#f2f2f2" }}>Login</Text>
       </ThemedButton>
 
-      <Link href="/register">
+      <Link href="/register" replace>
         <Text style={{ textAlign: "center" }}>Register instead</Text>
       </Link>
     </ThemeView>
@@ -31,6 +31,8 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
+
     justifyContent: "center",
   },
   title: {
