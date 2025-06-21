@@ -1,21 +1,41 @@
 import { View, Text, StyleSheet, Pressable, Alert } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import ThemeView from "../../components/ThemeView";
 import Spacer from "../../components/Spacer";
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Color";
 import ThemedButton from "../../components/ThemeButton";
+import ThemeTextInput from "../../components/ThemeTextInput";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = async () => {
-    Alert.alert("Hey this is polash");
+   
   };
 
   return (
     <ThemeView style={styles.container}>
       <Spacer />
       <Text style={styles.title}> Login to Your Account</Text>
-      <Spacer height={100} />
+      <Spacer height={40} />
+
+      <ThemeTextInput
+        style={{ marginBottom: 20, width: "80%" }}
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+      />
+
+      <ThemeTextInput
+        style={{ marginBottom: 20, width: "80%" }}
+        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
 
       <ThemedButton style={{}} onPress={handleSubmit}>
         <Text style={{ color: "#f2f2f2" }}>Login</Text>
