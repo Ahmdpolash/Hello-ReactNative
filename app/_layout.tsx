@@ -2,10 +2,11 @@ import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Slot, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { UserProvider } from "../contexts/UserContext";
 
 const RootLaout = () => {
   return (
-    <>
+    <UserProvider>
       <StatusBar style="auto" />
       <Stack>
         {/* individual */}
@@ -17,7 +18,7 @@ const RootLaout = () => {
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
       </Stack>
-    </>
+    </UserProvider>
   );
 };
 

@@ -6,14 +6,15 @@ import { Link } from "expo-router";
 import { Colors } from "../../constants/Color";
 import ThemedButton from "../../components/ThemeButton";
 import ThemeTextInput from "../../components/ThemeTextInput";
+import { useUser } from "../../hooks/useUser";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async () => {
-   
-  };
+  const { login } = useUser();
+
+  const handleSubmit = async () => {};
 
   return (
     <ThemeView style={styles.container}>
