@@ -14,7 +14,9 @@ export default function Login() {
 
   const { login } = useUser();
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async () => {
+    await login(email, password);
+  };
 
   return (
     <ThemeView style={styles.container}>

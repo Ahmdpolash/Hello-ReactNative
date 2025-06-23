@@ -12,12 +12,20 @@ import ThemeView from "../../components/ThemeView";
 import ThemedButton from "../../components/ThemeButton";
 import { useState } from "react";
 import ThemeTextInput from "../../components/ThemeTextInput";
+import { useUser } from "../../hooks/useUser";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { register } = useUser();
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async () => {
+    try {
+      await register(email, password);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
